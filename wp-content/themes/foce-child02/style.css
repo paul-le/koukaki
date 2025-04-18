@@ -110,27 +110,28 @@ body {
 }
 @media all and (min-width: 300px) and (max-width: 900px) {
   .banner {
-    background-image: url(screenshot.png);
+    background-image: url("assets/images/banner.png");
+  }
+  .banner img{
+    width: 85%;
+  }
+  .videoHeader{
+    opacity: 0;
+  }
+  video{
+    opacity: 0;
+    display: none;
   }
   #oscarsSection {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    margin-left: 16.5%;
-    padding-top: 15%;
+    margin-left: 20%;
   }
   #divRectangleOscars {
     background-image: url("/assets/images/oscars2.png");
-    /* filter: blur(10px); */
-    width: 12em;
-    height: 20em;
-    position: absolute;
-    z-index: 3;
-    top: 245.5em;
     z-index: -1;
-    background-color: #FF5C00;
-    filter: blur(20px);
   }
   #paragrapheOscars {
     font-family: Quicksand;
@@ -140,7 +141,8 @@ body {
     letter-spacing: -0.02em;
     text-align: left;
     width: 160px;
-    color: #FFF5E9;
+    /* color: #FFF5E9; */
+    color: #000000;
     z-index: 1;
   }
   #divParagrapheOscars {
@@ -151,6 +153,8 @@ body {
     margin-top: 7%;
   }
 }
+
+
 #headerTopOfPage {
   position: sticky;
   height: 70px;

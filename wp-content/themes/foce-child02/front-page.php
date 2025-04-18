@@ -6,7 +6,7 @@ get_header();
     <main id="primary" class="site-main">
         <section class="banner elem to-fade-in">
             <img class="logoCenter" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
-            <video alt="video fleurs & chats"  width="100%" height="100%" autoplay loop muted>
+            <video class=videoHeader alt="video fleurs & chats"  width="100%" height="100%" autoplay loop muted>
                 <source src="<?php echo get_template_directory_uri() . '/assets/images/koukakivideo.mp4'; ?>">
             </video>
             <object
