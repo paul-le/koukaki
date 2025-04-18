@@ -1,69 +1,451 @@
-/*
-Theme Name: Fleurs d'oranger &amp; Chats errants Child 02
-Theme URI: http://underscores.me/
-Template: foce
-Author: MyCustomWP
-Author URI: http://underscores.me/
-Description: Thème du film d'animation Fleurs d'orangers et charts errants du studio Koukaki
-Tags: custom-background,custom-logo,custom-menu,featured-images,threaded-comments,translation-ready
-Version: 1.0.0.1717160373
-Updated: 2024-05-31 12:59:33
-
-*/
-
-/* body {
-    animation: fadeInAnimation ease 3s;
-    animation-iteration-count: 1;
-    animation-fill-mode: forwards;
-}
-@keyframes fadeInAnimation {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-} */
-
-  #oscarsSection{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-between;
-	margin-left:16.5%;
-	padding-top: 15%;
+body {
+  background-color: #FFF5E9;
+  font-size: 15px;
+  margin: 0 auto;
 }
 
-#divRectangleOscars{
-	background-image: url('/assets/images/oscars2.png');
-	/* filter: blur(10px); */
-	width: 675px;
-	height: 220px;
-	position:absolute;
-	z-index: 3;
-	top: 234em;
-	z-index: -1;
+#primary {
+  min-height: 100vh;
 }
 
-#paragrapheOscars{
-	font-family: Quicksand;
-	font-size: 42px;
-	font-weight: 700;
-	line-height: 52.5px;
-	letter-spacing: -0.02em;
-	text-align: left;
-	width: 650px;
-	color: #FFF5E9;
-	z-index: 1;
+.main-character {
+  overflow-x: hidden;
+  width: 100%;
 }
 
-#divImageOscars{
-	position:absolute;
-	width: 300px;
-	top: 235em;
-	right: 24em;
+#characters {
+  width: 100%;
 }
 
-/* .story{
-    display: none;
-} */
+.divChars {
+  width: 100%;
+}
+
+.logoCenter {
+  position: absolute;
+}
+
+#place {
+  color: black;
+}
+
+.story #place {
+  display: flex;
+  background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+  width: 100%;
+  min-height: 699px;
+  background-size: cover;
+}
+
+.cloud {
+  position: absolute;
+  filter: blur(15px);
+}
+
+.bigCloudAnim {
+  position: absolute;
+  right: 150px;
+  top: 1390px;
+}
+
+.littleCloudAnim {
+  right: 50px;
+  top: 1560px;
+}
+
+.story__article::after {
+  animation: rotateAnim 3s linear infinite;
+}
+
+.story h2::after {
+  animation: rotateAnim 3s linear infinite;
+}
+
+@media screen and (min-width: 900px) {
+  .banner {
+    background-image: url(./assets/images/koukakivideo.mp4);
+  }
+  #oscarsSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* justify-content: space-between; */
+    margin-left: 16.5%;
+    padding-top: 15%;
+  }
+  #divRectangleOscars {
+    position: relative;
+    z-index: -1;
+    width:100%;
+  }
+  #divBackgroundImgOscar {
+    background-image: url("assets/images/Rectangle23.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  #paragrapheOscars {
+    /* background-image: url("assets/images/Rectangle23.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat; */
+    font-family: Quicksand;
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 52.5px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    width: 600px;
+    color: #FFF5E9;
+    z-index: 1;
+    padding:5%;
+  }
+  #divParagrapheOscars {
+    display: flex;
+    flex-direction: row;
+  }
+  #divImageOscars {
+    margin-top: 7%;
+  }
+}
+@media all and (min-width: 300px) and (max-width: 900px) {
+  .banner {
+    background-image: url(screenshot.png);
+  }
+  #oscarsSection {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 16.5%;
+    padding-top: 15%;
+  }
+  #divRectangleOscars {
+    background-image: url("/assets/images/oscars2.png");
+    /* filter: blur(10px); */
+    width: 12em;
+    height: 20em;
+    position: absolute;
+    z-index: 3;
+    top: 245.5em;
+    z-index: -1;
+    background-color: #FF5C00;
+    filter: blur(20px);
+  }
+  #paragrapheOscars {
+    font-family: Quicksand;
+    font-size: 1em;
+    font-weight: 700;
+    line-height: 52.5px;
+    letter-spacing: -0.02em;
+    text-align: left;
+    width: 160px;
+    color: #FFF5E9;
+    z-index: 1;
+  }
+  #divParagrapheOscars {
+    display: flex;
+    flex-direction: row;
+  }
+  #divImageOscars {
+    margin-top: 7%;
+  }
+}
+#headerTopOfPage {
+  position: sticky;
+  height: 70px;
+  background-color: #ffd5a2;
+}
+
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 40%;
+  left: 0;
+  margin: 0 auto;
+  font-family: "Varela Round", sans-serif;
+}
+
+.container p {
+  font-size: 20px;
+}
+
+.container a {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  color: #000000;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  top: 5px;
+}
+
+.container a:after {
+  content: "";
+  position: absolute;
+  background: #f59e0b;
+  height: 2px;
+  width: 0%;
+  transform: translateX(-50%);
+  left: 10em;
+  bottom: 0;
+  transition: 0.35s ease;
+}
+
+.container a:hover:after, .container a:focus:after, .container a:active:after {
+  width: 100%;
+  text-shadow: 2px 2px 2px rgba(240, 134, 104, 0);
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+  margin: 0;
+  padding-top: 1%;
+}
+
+.button_container {
+  position: relative;
+  bottom: 50%;
+  left: 90%;
+  width: 35px;
+  cursor: pointer;
+  z-index: 100;
+  transition: opacity 0.25s ease;
+}
+
+.button_container:hover {
+  opacity: 0.7;
+}
+
+.button_container.active .top {
+  transform: translateY(11px) translateX(0) rotate(45deg);
+  background: black;
+}
+
+.button_container.active .middle {
+  opacity: 0;
+  background: black;
+}
+
+.button_container.active .bottom {
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: black;
+}
+
+.button_container span {
+  background: black;
+  border: 2px solid white;
+  border: none;
+  height: 5px;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+
+.button_container span:nth-of-type(2) {
+  top: 11px;
+}
+
+.button_container span:nth-of-type(3) {
+  top: 22px;
+}
+
+.overlay {
+  position: fixed;
+  background: #fff5e9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.35s, height 0.35s;
+  overflow: hidden;
+}
+
+.overlay.open {
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+  width: 100%;
+}
+
+.overlay.open li {
+  animation: fadeInRight 0.5s ease forwards;
+  animation-delay: 0.35s;
+}
+
+.overlay.open li:nth-of-type(2) {
+  animation-delay: 0.4s;
+}
+
+.overlay.open li:nth-of-type(3) {
+  animation-delay: 0.45s;
+}
+
+.overlay.open li:nth-of-type(4) {
+  animation-delay: 0.5s;
+}
+
+.overlay nav {
+  position: relative;
+  height: 70%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  text-align: center;
+  width: 100%;
+}
+
+.overlay ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: inline-block;
+  position: relative;
+  height: 100%;
+}
+
+.overlay ul li {
+  display: block;
+  height: 25%;
+  height: 25%;
+  min-height: 50px;
+  position: relative;
+  opacity: 0;
+}
+
+.overlay ul li a {
+  display: block;
+  position: relative;
+  color: #000000;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.overlay ul li a:hover {
+  text-shadow: 0px 1px 12px rgb(240, 134, 104);
+}
+
+.overlay ul li a:hover:after, .overlay ul li a:focus:after, .overlay ul li a:active:after {
+  width: 100%;
+}
+
+.overlay ul li a:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  transform: translateX(-50%);
+  height: 3px;
+  background: #FFF;
+  transition: 0.35s;
+}
+
+#fleurOrangeBottomRight {
+  position: absolute;
+  left: 1200px;
+  top: 759px;
+}
+
+#fleurBlancheTopRight {
+  position: absolute;
+  left: 1100px;
+  top: 200px;
+  animation: rotateAnim 7s linear infinite;
+  width: 250px;
+  height: 250px;
+}
+
+#fleurVioletteTopLeft {
+  position: absolute;
+  right: 1425px;
+  top: 150px;
+}
+
+#fleurOrangeMiddleLeft {
+  position: absolute;
+  right: 1100px;
+  top: 470px;
+}
+
+#fleurRoseMiddleRight {
+  position: absolute;
+  right: -38px;
+  top: 326px;
+  width: 75px;
+  height: 75px;
+}
+
+#catHeader1 {
+  position: absolute;
+  right: 1215px;
+  top: 100px;
+  animation: float 4s ease-in-out infinite;
+}
+
+#catHeader2 {
+  position: absolute;
+  right: 300px;
+  top: 400px;
+  animation: float 4s ease-in-out infinite;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  overflow-x: hidden;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+@keyframes rotateAnim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    left: 20%;
+  }
+  100% {
+    opacity: 1;
+    left: 0;
+  }
+}
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+  50% {
+    transform: translatey(-20px);
+  }
+  100% {
+    transform: translatey(0px);
+  }
+}/*# sourceMappingURL=style.css.map */

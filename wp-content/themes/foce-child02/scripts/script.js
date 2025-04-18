@@ -29,22 +29,54 @@
     // $("#place").fadeOut()
     // $("#characters").fadeOut()
     $("#oscarsSection").fadeOut()
+    let nuage=false;
 
     $(window).scroll(function(){
 
-        if ($(document).scrollTop() > 100) {
+        if ($(document).scrollTop() >= 50) {
             $(".story").fadeIn(3000);
+            console.log("story");
         }
 
-        if ($(document).scrollTop() > 1800) {
+        if ($(document).scrollTop() >= 1300) {
             $("#studio").fadeIn(3000);
         }
 
-        if ($(document).scrollTop() > 2400) {
+        if ($(document).scrollTop() >= 1550) {;
             $("#oscarsSection").fadeIn(3000);
         }
 
+        if (nuage == false && $(document).scrollTop() > 700) {
+            $(".bigCloudAnim").animate({right: "+=300"} , 3000);
+            $(".littleCloudAnim").animate({right: "+=800"} , 3000);
+            nuage = true;
+        }
         console.log($(document).scrollTop())
     })
 
+    // $(".bigCloudAnim").animate({Left: "50px"} ,2000);
+
 }( jQuery ) );
+
+var swiper = new Swiper(".mySwiper", {
+    effect: "coverflow",
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: "auto",
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+    },
+  });
+
+  
+  $('#toggle').click(function() {
+    $(this).toggleClass('active');
+    $('#overlay').toggleClass('open');
+   });

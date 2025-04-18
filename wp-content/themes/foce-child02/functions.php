@@ -24,7 +24,16 @@ add_action( 'wp_enqueue_scripts', 'chld_thm_cfg_parent_css', 10 );
 // END ENQUEUE PARENT ACTION
 
 function addfilesjsandcss() {
+    wp_deregister_script('jquery');
+    // Utiliser car il est de base sur Wordpress et que ça créer des conflits quand on l'appeller de nous même
+
+    // Enregistrer jQuery à partir de la bibliothèque de Google
+    wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), null, true);
+
+    // Ajouter jQuery à la file d'attente des scripts
+    wp_enqueue_script('jquery');
+
 	wp_enqueue_style( 'mainstyle', get_stylesheet_directory_uri() . '/style.css' );
-	wp_enqueue_script( 'javascriptfile', get_stylesheet_directory_uri() . '/scripts/script.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'javascriptfile', get_stylesheet_directory_uri() . '/scripts/script.js', array('jquery'), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'addfilesjsandcss' );

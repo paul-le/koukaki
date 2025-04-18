@@ -5,12 +5,27 @@ get_header();
 
     <main id="primary" class="site-main">
         <section class="banner elem to-fade-in">
-            <img src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <img class="logoCenter" src="<?php echo get_template_directory_uri() . '/assets/images/logo.png'; ?> " alt="logo Fleurs d'oranger & chats errants">
+            <video alt="video fleurs & chats"  width="100%" height="100%" autoplay loop muted>
+                <source src="<?php echo get_template_directory_uri() . '/assets/images/koukakivideo.mp4'; ?>">
+            </video>
+            <object
+                type="image/png"
+                data=""
+                width="150"
+                height="150"
+                aria-label="This image should exist, but alas it does not"
+                >
+                <img src="screenshot.png" alt="Fallback image" width="150" height="150" />
+            </object>
         </section>
         <section id="#story" class="story elem to-fade-in">
             <h2>L'histoire</h2>
             <article id="" class="story__article">
                 <p><?php echo get_theme_mod('story'); ?></p>
+                <p>Loin, très loin, au-delà des monts Karma, à mille lieues des pays Mizukage et Kagura, demeurent les Nekos Nekos. Ils vivent en retrait, sur les côtes du Funato, un vaste océan d’arbres fruitiers. Un petit ruisseau coule en leur lieu et les approvisionne en régalades nécessaires en tout genre ; un pays paradisiaque... Sauf pour Kawaneko, le premier chat à avoir développé une intolérance à la fleur d’oranger, qui malheureusement pour lui est la base de toute production du pays. Serait-ce une maladie, un virus, le début d’une pandémie ou un sort jeté par le sorcier Jaakuna ? Kawaneko et sa bande partent en quête de réponses pour arrêter le malveillant Jaakuna, et retrouver l’ordre chez les Nekos Nekos.
+
+</p>
             </article>
             <?php
             $args = array(
@@ -22,36 +37,36 @@ get_header();
             );
             $characters_query = new WP_Query($args);
             ?>
-            <article class="elem to-fade-in" id="characters">
-                <div class="main-character ">
+            <article class="elem to-fade-in divChars" id="characters">
+            <div class="main-character swiper mySwiper">
                     <h3>Les personnages</h3>
-                    <?php
-                    $main_character = $characters_query->posts[0];
-                    echo '<figure>';
-                    echo get_the_post_thumbnail( $main_character->ID, 'full' );
-                    echo '<figcaption>'. $main_character->post_title . '</figcaption>';
-                    echo '</figure>';
-                    $characters_query->next_post();
-                    ?>
-                </div>
-                <div class="other-characters">
-                    <?php
-                    while ( $characters_query->have_posts() ) {
+                    <div class="swiper-wrapper">
+                        <?php
+                        while ( $characters_query->have_posts() ) {
                         $characters_query->the_post();
-                        echo '<figure>';
+                        echo '<figure class="swiper-slide">';
                         echo get_the_post_thumbnail( get_the_ID(), 'full' );
                         echo '<figcaption>';
                         the_title();
                         echo'</figcaption>';
                         echo '</figure>';
                     }
-                    ?>
+                        ?>
+                    </div>
                 </div>
             </article>
             <article class="elem to-fade-in" id="place">
                 <div>
                     <h3>Le Lieu</h3>
-                    <p><?php echo get_theme_mod('place'); ?></p>
+                    <p><?php echo get_theme_mod('place'); ?> Le pays fantastique des Nekos Nekos : Nekosnotochi. Loin, très loin, au-delà des monts Karma, à mille lieues des pays Mizukage et Kagura. Ils vivent en retrait, sur les côtes du Funato, un vaste océan d’arbres fruitiers. Un petit ruisseau coule en leur lieu et les approvisionne en régalades nécessaires en tout genre ; un pays paradisiaque... </p>
+                    <div id="allCloudsDiv">
+                        <div class="cloud bigCloudAnim">
+                            <img src=<?php echo get_stylesheet_directory_uri() . '/assets/images/big_cloud.png'; ?>>
+                        </div>
+                        <div class="cloud littleCloudAnim">
+                            <img src=<?php echo get_stylesheet_directory_uri() . '/assets/images/little_cloud.png'; ?>>
+                        </div>
+                    </div>
                 </div>
 
             </article>
@@ -67,22 +82,18 @@ get_header();
         </section>
 
         <section class="elem to-fade-in" id="oscarsSection">
-            <div id="divParagrapheOscars">
-                <div>
-                <p id="paragrapheOscars">Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</p>
+            <div id="divRectangleOscars">
+                <div id="divParagrapheOscars">
+                    <div id="divBackgroundImgOscar">
+                        <p id="paragrapheOscars">Fleurs d’oranger & chats errants est nominé aux Oscars Short Film Animated de 2022 !</p>
+                    </div>
+                    <div id="divImageOscars">
+                        <img id="imgOscars" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/oscars2.png'; ?> " alt="image des oscars">
+                    </div>
                 </div>
-                <div id="divRectangleOscars">
-                </div>
-            </div>
-            <div id="divImageOscars">
-                <img id="imgOscars" src="<?php echo get_stylesheet_directory_uri() . '/assets/images/oscars2.png'; ?> " alt="image des oscars">
             </div>
         </section>
     </main><!-- #main -->
 
 <?php
-get_footer();
-
-animate = fonction jquery
-
-$(quelquechoseselecteur ex .oscars).animate(Left:50px , 2000)
+get_footer(); ?>

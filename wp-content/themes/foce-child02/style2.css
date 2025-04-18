@@ -1,0 +1,146 @@
+/*
+Theme Name: Fleurs d'oranger &amp; Chats errants Child 02
+Theme URI: http://underscores.me/
+Template: foce
+Author: MyCustomWP
+Author URI: http://underscores.me/
+Description: Thème du film d'animation Fleurs d'orangers et charts errants du studio Koukaki
+Tags: custom-background,custom-logo,custom-menu,featured-images,threaded-comments,translation-ready
+Version: 1.0.0.1717160373
+Updated: 2024-05-31 12:59:33
+
+*/
+
+/* body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+} */
+
+.banner{
+	background-image:url(./assets/images/koukakivideo.mp4)
+}
+
+.logoCenter{
+	position: absolute;
+}
+
+  #oscarsSection{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	margin-left:16.5%;
+	padding-top: 15%;
+}
+
+#divRectangleOscars{
+	background-image: url('/assets/images/oscars2.png');
+	/* filter: blur(10px); */
+	width: 675px;
+	height: 220px;
+	position:absolute;
+	z-index: 3;
+	top: 234em;
+	z-index: -1;
+	filter: blur(15px);
+}
+
+#paragrapheOscars{
+	/* background-image: url('./assets/images/orange_characters_bg.png'); */
+	background-color:#FF5C00;
+	/* box-shadow: inset 5em 3.5em #FF5C00; */
+	/* -webkit-box-shadow: inset -50px -47px 50px 50px #FF5C00; 
+	box-shadow: inset -50px -47px 50px 50px #FF5C00; */
+	font-family: Quicksand;
+	font-size: 42px;
+	font-weight: 700;
+	line-height: 52.5px;
+	letter-spacing: -0.02em;
+	text-align: left;
+	width: 650px;
+	color: #FFF5E9;
+	z-index: 1;
+}
+
+#divImageOscars{
+	position:absolute;
+	width: 300px;
+	top: 235em;
+	right: 24em;
+}
+
+.story #place {
+	display: flex;
+	background-image: url("./assets/images/Studio_Koukaki-image_place.png");
+	width: 100%;
+	min-height: 699px;
+	background-size: cover;
+}
+
+.cloud{
+	position: absolute;
+	filter: blur(15px);
+}
+
+.bigCloudAnim{
+	right: 150px;
+	top: 1200px;
+}
+
+.littleCloudAnim{
+	right: 50px;;
+}
+
+.story__article::after{
+	animation: rotateAnim 3s linear infinite;
+}
+
+.story h2::after{
+	animation: rotateAnim 3s linear infinite;
+}
+
+@keyframes rotateAnim {
+	0%{
+	   transform: rotate(0deg);
+	  }
+   100%{
+	   transform: rotate(360deg);
+	  }
+   }
+   
+
+ /* .story{
+    display: none;
+} */
+
+.swiper {
+	width: 100%;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	overflow-x: hidden;
+  }
+
+  .swiper-slide {
+	background-position: center;
+	background-size: cover;
+	width: 300px;
+	height: 300px;
+  }
+
+  .swiper-slide img {
+	display: block;
+	width: 100%;
+  }
+
+  @media all and (min-width: 300px) and (max-width: 900px){
+
+  }
