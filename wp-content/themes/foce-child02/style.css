@@ -424,6 +424,54 @@ h1 {
   width: 100%;
 }
 
+/* #studio h2{
+  background-attachment:fixed;
+  background-size: cover;
+  width: 30%;
+  margin:0 auto;
+  font-size: 37px;
+} */
+
+#paralx0,#paralx1{
+  position:absolute;
+  font-size: 35px;
+  top:35px; /*90 position pour être caché et 35 pour être affiché*/
+}
+
+#paralx0 {
+  right: 730px;
+  z-index: 21;
+}
+#paralx1 {
+  z-index: 20;
+}
+
+.parallaxTest{
+  /* background-attachment:fixed */
+}
+
+.fadein {
+  opacity: 0;
+  transition: all 1.5s;
+  transform: translate(0, 100px);
+}
+
+.fadein2 {
+  opacity: 0;
+  transition: all 2,5s;
+  transform: translate(0, 200px);
+}
+
+.fadein.visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.fadein2.visible2 {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
 @keyframes rotateAnim {
   0% {
     transform: rotate(0deg);
