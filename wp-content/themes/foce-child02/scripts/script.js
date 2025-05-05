@@ -2,68 +2,107 @@
 
   ( function( $ ) {
 
-    // function checkElementLocation() {
-    //     var $window = $(window);
-    //     var bottom_of_window = $window.scrollTop() + $window.height();
-      
-    //     $('.elem').each(function(i) {
-    //       var $that = $(this);
-    //       var bottom_of_object = $that.position().top + $that.outerHeight();
-      
-    //       //if element is in viewport, add the animate class
-    //       if (bottom_of_window > bottom_of_object) {
-    //         $(this).addClass('fade-in');
-    //       }
-    //     });
-    //   }
-    //   // if in viewport, show the animation
-    //   checkElementLocation();
-      
-    //   $(window).on('scroll', function() {
-    //     checkElementLocation();
-    //   });
-
-
-    $(".story").fadeOut()
-    $("#studio").fadeOut()
+    // $(".story").fadeOut()
+    // $("#studio").fadeOut()
     // $("#place").fadeOut()
     // $("#characters").fadeOut()
-    $("#oscarsSection").fadeOut()
+    // $("#oscarsSection").fadeOut()
     let nuage=false;
-    const wrapper = document.getElementById("studio");
-    const paralx0 = document.getElementById("paralx0");
-    const paralx1 = document.getElementById("paralx1");
 
 
     $(window).scroll(function(){
 
         if ($(document).scrollTop() >= 50) {
-            $(".story").fadeIn(3000);
+            // $(".story").fadeIn(3000);
             // console.log("story");
+            $(".storySection").addClass('visibleFade');
         }
+
+        if ($(document).scrollTop() >= 400) {
+          // $(".story").fadeIn(3000);
+          // console.log("story");
+          $(".divChars").addClass('visibleFade');
+      }
+
+      if ($(document).scrollTop() >= 1200) {
+        // $(".story").fadeIn(3000);
+        // console.log("story");
+        $(".placeSection").addClass('visibleFade');
+    }
         
         if ($(document).scrollTop() >= 1300) {
-            $("#studio").fadeIn(3000);
+            // $("#studio").fadeIn(3000);
+            $(".studioSection").addClass('visibleFade');
+            // $(".parallax-up2").addClass('active2');
+
+             // Parallax Studio Koukaki en bas de page
+              setTimeout(function () {
+                $('.wordPara1').addClass('active2');
+              }, 500);
+            
+              setTimeout(function () {
+                $('.wordPara2').addClass('active2');
+              }, 1000);
         }
 
         if ($(document).scrollTop() >= 1550) {;
-            $("#oscarsSection").fadeIn(3000);
+            // $("#oscarsSection").fadeIn(3000);
+            $(".oscarsClassSection").addClass('visibleFade');
         }
 
-        if ($(document).scrollTop() >= 2280) {;
-          $("paralx0").fadeIn(1000);
-      }
+        // if (nuage == false && $(document).scrollTop() > 700) {
+        //     $(".bigCloudAnim").animate({right: "+=300"} , 3000);
+        //     $(".littleCloudAnim").animate({right: "+=800"} , 3000);
+        //     nuage = true;
+        // }
 
-        if (nuage == false && $(document).scrollTop() > 700) {
-            $(".bigCloudAnim").animate({right: "+=300"} , 3000);
-            $(".littleCloudAnim").animate({right: "+=800"} , 3000);
-            nuage = true;
+          function isElementInViewport(el) {
+            const rect = el.getBoundingClientRect();
+            return (
+                rect.top < window.innerHeight &&
+                rect.bottom > 0
+            );
         }
-        console.log($(document).scrollTop())
         
-    })
+          function isElementFullyOutOfViewport(el) {
+              const rect = el.getBoundingClientRect();
+              return (
+                  rect.bottom < 0 || rect.top > window.innerHeight
+              );
+          }
 
-    // $(".bigCloudAnim").animate({Left: "50px"} ,2000);
+          $(window).on('scroll', function() {
+              const $bigCloud = $('.bigCloudAnim');
+              const $littleCloud = $('.littleCloudAnim');
+              const bigCloud = $bigCloud[0];
+
+              // Si les nuages sortent du viewport reset les nuages
+              if (isElementFullyOutOfViewport(bigCloud)) {
+                  if (nuage) {
+                      // Reset les nuages
+                      $bigCloud.stop(true).css({right: "0px"});
+                      $littleCloud.stop(true).css({right: "0px"});
+                      nuage = false;
+                  }
+              }
+
+              // L'animation commence si les nuages sont dans l'écran et seulement si l'animation est déjà pas en cours
+              if (!nuage && !isElementFullyOutOfViewport(bigCloud)) {
+                  $bigCloud.animate({right: "+=300"} , 3000);
+                  $littleCloud.animate({right: "+=800"} , 3000);
+                  nuage = true;
+              }
+          });
+          console.log($(document).scrollTop())
+
+          $(window).on('scroll', function () {
+            var scrollTop = $(this).scrollTop();
+          
+            $('#logoParallax').css('transform', 'translate(-50%, calc(-50% + ' + scrollTop * 1.8 + 'px))');
+        
+            $('.videoHeader').css('transform', 'translateY(' + scrollTop * 0.1 + 'px)');
+          });
+      })
 
 }( jQuery ) );
 
@@ -71,7 +110,8 @@ var swiper = new Swiper(".mySwiper", {
     effect: "coverflow",
     grabCursor: true,
     centeredSlides: true,
-    slidesPerView: "auto",
+    slidesPerView: "3",
+    loop: true,
     coverflowEffect: {
       rotate: 50,
       stretch: 0,
@@ -91,58 +131,9 @@ var swiper = new Swiper(".mySwiper", {
    });
 
 
-// const wrapper = document.getElementById("studio");
-// const paralx0 = document.getElementById("paralx0");
-// const paralx1 = document.getElementById("paralx1");
+   // Parallax logo header qui marche
 
-// wrapper.onscroll = function () {
-//   let y = wrapper.scrollTop;
-//   console.log("hallo");
-//   paralx0.style.top = 35 - y * 1.25 + "px";
-//   paralx1.style.top = 90 - y * 0.75 + "px";
-// };
-
-
-$(document).on("scroll", function () {
-  var pageTop = $(document).scrollTop()
-  var pageBottom = pageTop + $(window).height()
-  var tags = $(".fadein")
-  var tags2 = $(".fadein2")
-
-  for (var i = 0; i < tags.length; i++ ){
-    var tag = tags[i]
-
-    if ($(tag).offset().top < pageBottom) {
-      $(tag).addClass("visible")
-    } else {
-      $(tag).removeClass("visible")
-    }
-  }
-
-  // for (var i2 = 0; i2 < tags2.length; i2++ ){
-  //   var tag2 = tags2[i]
-
-  //   if ($(tag).offset().top < pageBottom) {
-  //     $(tag2).addClass("visible2")
-  //   } else {
-  //     $(tag2).removeClass("visible2")
-  //   }
-  // }
-})
-
-// $(document).on("scroll", function () {
-//   var pageTop = $(document).scrollTop()
-//   var pageBottom = pageTop + $(window).height()
-//   var tags2 = $(".fadein2")
-
-//   for (var i2 = 0; i2 < tags2.length; i2++) {
-//     var tag2 = tags2[i2]
-
-//     if ($(tag2).offset().top < pageBottom) {
-//       $(tag2).addClass("visible2")
-//     } else {
-//       $(tag2).removeClass("visible2")
-//     }
-//   }
-// })
+   window.addEventListener('load', () => {
+    document.getElementById('logoParallax').classList.add('active');
+  });
 

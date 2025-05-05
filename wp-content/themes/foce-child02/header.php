@@ -16,13 +16,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-    <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script> -->
 	<?php wp_head(); ?>
 </head>
 
@@ -54,7 +49,7 @@
                 <img id="catHeader2" src=<?php echo get_stylesheet_directory_uri() . '/assets/images/cat2.png'; ?>>
                 <nav class="overlay-menu">
                     <ul>
-                        <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li>
+                        <!-- <li class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></li> -->
                         <li><a href="#story">Histoire</a></li>
                         <li><a href="#characters">Personnages</a></li>
                         <li><a href="#place">Lieu</a></li>
